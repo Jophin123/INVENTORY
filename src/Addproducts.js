@@ -11,7 +11,7 @@ class Addproducts extends React.Component {
       e.preventDefault();
       this.props.addData(this.state);
       this.setState({pcode:"",pname:"",pquantity:""})
-      
+      document.getElementById("add").innerHTML="successfully added";
     };
   }
   render() {
@@ -33,6 +33,7 @@ class Addproducts extends React.Component {
                     id="productcode"
                     value={this.state.pcode}
                     onChange={(e) => this.setState({ pcode: e.target.value })}
+                    required
                   />
                 </div>
                 <div class="mb-3">
@@ -46,6 +47,7 @@ class Addproducts extends React.Component {
                     id="productname"
                     value={this.state.pname}
                     onChange={(e) => this.setState({ pname: e.target.value })}
+                    required
                   />
                 </div>
                 <div class="mb-3">
@@ -61,12 +63,14 @@ class Addproducts extends React.Component {
                     onChange={(e) =>
                       this.setState({ pquantity: e.target.value })
                     }
+                    required
                   />
                 </div>
-
+                     
                 <button type="submit" className="btn btn-primary">
                   Submit
                 </button>
+                <p id="add"></p>
               </div>
             </form>
           </div>
